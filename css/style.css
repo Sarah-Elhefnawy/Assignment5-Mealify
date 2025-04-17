@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Inter", sans-serif
+}
+
+.container {
+    padding: 40px 15px;
+    width: 95%;
+    margin: auto;
+}
+
+section {
+    padding: 70px 0 20px;
+
+}
+
+/* Start of Navbar */
+nav {
+    color: #fff;
+    background-color: #171717;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    /* box-shadow: 0px 0px 14px 0px #0000001b; */
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+nav .container {
+    padding: 25px 15px;
+}
+
+.inner-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.nav-logo a {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.nav-logo a::after {
+    font-size: 30px;
+    font-weight: 700;
+    content: ".";
+    /* color: #CE1212; */
+    color: #C17E1F;
+}
+
+nav .fa-solid {
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 900;
+}
+
+nav .fa-moon {}
+
+.nav-links {
+    background-color: #fff;
+    border-left: 2px solid #f1f1f1;
+    width: 350px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+.nav-links ul li a:hover {
+    color: #fff;
+}
+
+.close-nav {
+    padding: 10px 15px 5px;
+    display: flex;
+    justify-content: flex-end;
+    color: #7F7F90;
+}
+
+i.fa-bars:hover .nav-links {
+    transform: translateX(0);
+}
+
+.nav-links a {
+    color: #7F7F90;
+}
+
+/* End of Navbar */
+
+/* Start of Header */
+.header {
+    /* background-color: #EEEEEE; */
+    background-color: #252525;
+}
+
+.header-image {
+    width: 100%;
+}
+
+.header-image img {
+    width: 100%;
+    filter: drop-shadow(4px 4px 9px #000a);
+}
+
+.header h2 {
+    /* color: #37373F; */
+    color: #FFF;
+    font-size: 65px;
+    font-weight: 700;
+    text-align: center;
+    font-family: "Amatic SC", sans-serif;
+}
+
+.header p {
+    /* color: #4F4F5A; */
+    color: #9f9f9f;;
+    font-size: 16px;
+    line-height: 25.6px;
+    font-weight: 400;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.header-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+a.header-button {
+    padding: 15px 30px;
+    color: #000;
+    /* background-color: #E61414; */
+    background-color: #C17E1F;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 30px;
+    transition: all 1s;
+}
+
+a.header-button:hover {
+    background-color: #de8f22;
+}
+
+.header-button-border {
+    width: 50px;
+    height: 50px;
+    /* border-left: #CE1212 8px solid; */
+    border-left: #C17E1F 8px solid;
+    border-radius: 50%;
+    background-color: #171717;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a.header-play-button {
+    color: #fff;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+}
+
+a.header-play-button:hover {
+    color: #de8f22;
+}
+
+/* End of Header */
+
+/* Start of Chefs */
+#Chefs {
+    text-align: center;
+    background-color: #202020;
+}
+
+#Chefs h2 {
+    color: #7F7F90;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.chefs-p {
+    /* color: #212529; */
+    color: #fff;
+    font-family: "Amatic SC", sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+p span {
+    /* color: #CE1212; */
+    color: #C17E1F;
+    font-family: "Amatic SC", sans-serif;
+}
+
+.inner-chefs {
+    /* background-color: burlywood; */
+    text-align: center;
+    border-radius: 8px;
+}
+
+.inner-chefs img {
+    width: 100%;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.inner-chefs h3 {
+    /* color: #212529; */
+    color: #fff;
+    font-size: 18.72px;
+    font-weight: 700;
+}
+
+.inner-chefs span {
+    color: #7F7F90;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 5px 0px 10px;
+}
+
+.inner-chefs p {
+    color: #7F7F90;
+    font-size: 15px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.chefs {
+    display: flex;
+    flex-flow: column wrap;
+
+}
+
+.chef {
+    background-color: #171717;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 15px 0px;
+    flex: 1 0 25%;
+}
+
+/* End of Chefs */
