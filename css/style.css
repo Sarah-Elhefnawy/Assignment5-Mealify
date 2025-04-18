@@ -4,18 +4,27 @@
     padding: 0;
     text-decoration: none;
     list-style: none;
-    font-family: "Inter", sans-serif
+    font-family: "Inter", sans-serif;
+}
+
+body::selection {
+    background-color: #C17E1F;
+    color: #000;
 }
 
 .container {
     padding: 40px 15px;
-    width: 95%;
+    width: 85%;
     margin: auto;
 }
 
 section {
     padding: 70px 0 20px;
 
+}
+
+.text-upper {
+    text-transform: uppercase;
 }
 
 /* Start of Navbar */
@@ -28,7 +37,6 @@ nav {
     /* box-shadow: 0px 0px 14px 0px #0000001b; */
     font-size: 16px;
     font-weight: 400;
-    cursor: pointer;
 }
 
 nav .container {
@@ -60,22 +68,27 @@ nav .fa-solid {
     font-size: 25px;
     line-height: 25px;
     font-weight: 900;
+    cursor: pointer;
 }
-
-nav .fa-moon {}
 
 .nav-links {
     background-color: #fff;
-    border-left: 2px solid #f1f1f1;
-    width: 350px;
+    width: 280px;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 999;
-    transform: translateX(100%);
+    z-index: 9;
+    transform: translateX(0);
+    transition: all 1s;
+}
+
+.nav-links ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-links ul li a {
     transition: all 1s;
 }
 
@@ -94,8 +107,31 @@ i.fa-bars:hover .nav-links {
     transform: translateX(0);
 }
 
+.nav-links li {
+    padding: 10px;
+}
+
 .nav-links a {
-    color: #7F7F90;
+    color: #9f9f9f;
+}
+
+nav .nav-links ul li {
+    position: relative;
+}
+
+nav .nav-links ul li a::before {
+    content: "";
+    background-color: #C17E1F;
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: -1px;
+    left: 5px;
+    transition: all 0.5s;
+}
+nav .nav-links ul li a:hover::before,
+nav .nav-links ul li a.active::before{
+    width: 52px;
 }
 
 /* End of Navbar */
@@ -104,6 +140,17 @@ i.fa-bars:hover .nav-links {
 .header {
     /* background-color: #EEEEEE; */
     background-color: #252525;
+    display: flex;
+    align-items: center;
+    /* height: 160vh; */
+}
+
+.header-inner {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }
 
 .header-image {
@@ -120,7 +167,6 @@ i.fa-bars:hover .nav-links {
     color: #FFF;
     font-size: 65px;
     font-weight: 700;
-    text-align: center;
     font-family: "Amatic SC", sans-serif;
 }
 
@@ -130,7 +176,6 @@ i.fa-bars:hover .nav-links {
     font-size: 16px;
     line-height: 25.6px;
     font-weight: 400;
-    text-align: center;
     margin: 20px 0;
 }
 
@@ -193,7 +238,6 @@ a.header-play-button:hover {
     color: #7F7F90;
     font-size: 14px;
     font-weight: 400;
-    text-transform: uppercase;
 }
 
 .chefs-p {
@@ -216,10 +260,11 @@ p span {
     border-radius: 8px;
 }
 
-.inner-chefs img {
+.chef img {
     width: 100%;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
+    position: relative;
 }
 
 .inner-chefs h3 {
@@ -238,7 +283,7 @@ p span {
 
 .inner-chefs p {
     color: #7F7F90;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 400;
     font-style: italic;
 }
@@ -254,6 +299,42 @@ p span {
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 15px 0px;
     flex: 1 0 25%;
+    position: relative;
+    transition: transform 1s;
+    /* margin: 30px; */
+}
+
+.chef-social {
+    background-color: #c7c1bc;
+    color: #7F7F90;
+    width: fit-content;
+    position: absolute;
+    top: 40px;
+    right: -50px;
+    border-radius: 5px;
+    padding: 20px;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    overflow-x: hidden !important;
+}
+
+.chef-social i {
+    cursor: pointer;
+    transition: color 1s;
+}
+
+.chef:hover .chef-social {
+    opacity: 1;
+    right: 20px;
+}
+
+.chef:hover {
+    transform: scale(1.1);
+}
+
+.chef-social i:hover {
+    color: black;
 }
 
 /* End of Chefs */
+
