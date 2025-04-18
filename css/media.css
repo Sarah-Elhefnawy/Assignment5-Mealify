@@ -89,6 +89,14 @@
         flex: 1 0 50%;
     }
 
+    .galleries {
+        flex-flow: row wrap;
+    }
+
+    .gallery {
+        flex: 1 0 50%;
+    }
+
 }
 
 
@@ -163,6 +171,10 @@
     }
 
     .chef {
+        flex: 1 0 33.333%;
+    }
+
+    .gallery {
         flex: 1 0 33.333%;
     }
 }
