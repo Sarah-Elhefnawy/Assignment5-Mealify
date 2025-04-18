@@ -27,6 +27,38 @@ section {
     text-transform: uppercase;
 }
 
+h2 {
+    color: #7F7F90;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.section-content {
+    /* color: #212529; */
+    color: #fff;
+    font-family: "Amatic SC", sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+p span {
+    /* color: #CE1212; */
+    color: #C17E1F;
+    font-family: "Amatic SC", sans-serif;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+h3 {
+    /* color: #212529; */
+    color: #fff;
+    font-size: 18.72px;
+    font-weight: 700;
+}
+
 /* Start of Navbar */
 nav {
     color: #fff;
@@ -151,7 +183,6 @@ nav .nav-links ul li a.active::before {
     flex-flow: row-reverse wrap;
     justify-content: space-between;
     align-items: center;
-    text-align: center;
 }
 
 .header-image {
@@ -231,33 +262,11 @@ a.header-play-button:hover {
 
 /* Start of Chefs */
 #Chefs {
-    text-align: center;
     background-color: #202020;
-}
-
-#Chefs h2 {
-    color: #7F7F90;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.chefs-p {
-    /* color: #212529; */
-    color: #fff;
-    font-family: "Amatic SC", sans-serif;
-    font-size: 50px;
-    font-weight: 400;
-}
-
-p span {
-    /* color: #CE1212; */
-    color: #C17E1F;
-    font-family: "Amatic SC", sans-serif;
 }
 
 .inner-chefs {
     /* background-color: burlywood; */
-    text-align: center;
     border-radius: 8px;
 }
 
@@ -266,13 +275,6 @@ p span {
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     position: relative;
-}
-
-.inner-chefs h3 {
-    /* color: #212529; */
-    color: #fff;
-    font-size: 18.72px;
-    font-weight: 700;
 }
 
 .inner-chefs span {
@@ -342,7 +344,6 @@ p span {
 /* Start of Gallery */
 #Gallery {
     background-color: #252525;
-    text-align: center;
 }
 
 .galleries {
@@ -350,26 +351,6 @@ p span {
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-}
-
-.gallery-content h2 {
-    color: #7F7F90;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.gallery-content p {
-    /* color: #212529; */
-    color: #fff;
-    font-family: "Amatic SC", sans-serif;
-    font-size: 50px;
-    font-weight: 400;
-}
-
-.gallery-content span {
-    /* color: #CE1212; */
-    color: #C17E1F;
-    font-family: "Amatic SC", sans-serif;
 }
 
 .gallery {
@@ -396,15 +377,17 @@ p span {
 }
 
 .gallery-layer-content {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 300;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 .gallery-layer-content>h2 {
+    color: #fff;
+    text-transform: capitalize;
     font-size: 24px;
     font-weight: 700;
 }
@@ -419,3 +402,100 @@ p span {
 }
 
 /* End of Gallery */
+
+/* Start of Contact */
+#Contact {
+    background-color: #202020;
+}
+
+.contacts {
+    margin-block: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li.contact {
+    background-color: #0D0D0D;
+    color: #c7c1bc;
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 0 100%;
+    padding: 10px;
+    margin-block: 5px;
+}
+
+.contact-i {
+    width: 50px;
+    height: 50px;
+    background-color: #C17E1F;
+    border-radius: 50%;
+    position: relative;
+    color: #0D0D0D;
+    padding: 8px;
+}
+
+.contact-i i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contact-content {
+    /* display: flex;
+    flex-flow: column wrap; */
+
+    padding-left: 10px;
+}
+
+.contact p {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+form {
+    padding: 20px;
+    background-color: #171717;
+}
+
+input {
+    width: 50%;
+    height: 40px;
+    border-radius: 0;
+    border: none;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+.subject {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    padding: 10px 0 0 10px;
+    margin-top: 10px;
+    resize: both;
+    overflow: auto;
+}
+
+form button {
+    background-color: #C17E1F;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    display: flex;
+    margin-top: 10px;
+    justify-self: center;
+    cursor: pointer;
+    transition: background-color 1s;
+    color: #252525;
+}
+
+form button:hover {
+    background-color: #de8f22;
+}
+
+/* End of Contact */

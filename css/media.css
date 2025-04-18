@@ -97,6 +97,14 @@
         flex: 1 0 50%;
     }
 
+    .contacts {
+        /* flex-flow: row wrap; */
+    }
+
+    .contact {
+        /* flex: 1 0 50%; */
+    }
+
 }
 
 
