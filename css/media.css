@@ -87,14 +87,6 @@
         flex-flow: row wrap;
     }
 
-    .chef {
-        flex: 1 0 50%;
-    }
-
-    .galleries {
-        /* flex-flow: row wrap; */
-    }
-
     .gallery:nth-child(1) {
         grid-row: span 6;
     }
@@ -227,10 +219,6 @@
 
     .nav-links ul {
         flex-flow: row wrap;
-    }
-
-    .nav-links li a.active {
-        color: #fff;
     }
     
     .close-nav .fa-xmark {

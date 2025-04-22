@@ -10,6 +10,31 @@
     --bg-3: hsl(0, 0%, 13%);
     --bg-4: hsl(0, 0%, 62%);
     --bg-5: hsl(0, 0%, 5%);
+
+    /* light theme */
+    --color-primary-light: #CE1212;
+    --color-secondary-light: #E61414;
+    --bg-primary-light: #FFFFFF;
+    --bg-secondary-light: #EEEEEE;
+    --bg-3-light: var(--bg-primary-light);
+    --bg-4-light: #4F4F5A;
+    --bg-5-light: #F5F5F5;
+    --font-color-secondary-light: #37373F;
+}
+
+:root:has(#theme:checked) {
+    --color-primary: var(--color-primary-light);
+    --color-secondary: var(--color-secondary-light);
+    --bg-primary: var(--bg-primary-light);
+    --bg-secondary: var(--bg-secondary-light);
+    --font-color-secondary: var(--font-color-secondary-light);
+    --bg-3: var(--bg-3-light);
+    --bg-4: var(--bg-4-light);
+    --bg-5: var(--bg-5-light);
+}
+
+::selection {
+    background: var(--color-primary);
 }
 
 * {
@@ -23,7 +48,7 @@
 
 body {
     overflow-x: hidden;
-    overflow-y: var(--bg-5);
+    overflow-y: var(--bg-primary);
 }
 
 .container {
@@ -50,7 +75,6 @@ h2 {
 }
 
 .section-content {
-    /* color: #212529; */
     color: var(--font-color-secondary);
     font-family: "Amatic SC", sans-serif;
     font-size: 50px;
@@ -58,7 +82,6 @@ h2 {
 }
 
 h2+p span {
-    /* color: #CE1212; */
     color: var(--color-primary);
     font-family: "Amatic SC", sans-serif;
 }
@@ -68,7 +91,6 @@ h2+p span {
 }
 
 h3 {
-    /* color: #212529; */
     color: var(--font-color-secondary);
     font-size: 18.72px;
     font-weight: 700;
@@ -85,7 +107,7 @@ nav {
     position: fixed;
     width: 100%;
     z-index: 99;
-    /* box-shadow: 0px 0px 14px 0px #0000001b; */
+    box-shadow: 0px 0px 14px 0px #0000001b;
     font-size: 16px;
     font-weight: var(--font-weight);
 }
@@ -111,23 +133,65 @@ nav .container {
     font-size: 30px;
     font-weight: 700;
     content: ".";
-    /* color: #CE1212; */
     color: var(--color-primary);
 }
 
-nav .fa-solid {
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-right a {
+    color: var(--font-color-secondary);
+}
+
+nav .fa-solid,
+nav .fa-regular {
     font-size: 25px;
     line-height: 25px;
     font-weight: 900;
     cursor: pointer;
 }
 
-.nav-theme a {
+.nav-theme {
+    position: relative;
+    margin-right: 20px;
+}
+
+.nav-theme label {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.light {
+    display: none;
+    color: var(--font-color);
+}
+
+.dark {
+    display: block;
     color: var(--font-color-secondary);
 }
 
+:root:has(#theme:checked) .light {
+    display: block;
+}
+
+:root:has(#theme:checked) .dark {
+    display: none;
+}
+
+:root:not(:has(#theme:checked)) .light {
+    display: none;
+}
+
+:root:not(:has(#theme:checked)) .dark {
+    display: block;
+}
+
 .nav-links {
-    background-color: var(--font-color-secondary);
+    background-color: var(--bg-primary-light);
     width: 280px;
     height: 100vh;
     position: fixed;
@@ -136,7 +200,6 @@ nav .fa-solid {
     z-index: 9;
     transform: translateX(100%);
     transition: all 0.3s ease-in-out;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links:target {
@@ -145,10 +208,6 @@ nav .fa-solid {
 
 .nav-links:target .close-nav {
     display: flex;
-}
-
-.nav-links:target~.nav-theme .fa-bars {
-    display: none;
 }
 
 .nav-links ul {
@@ -203,11 +262,15 @@ nav .nav-links ul li a.active::before {
     width: 52px;
 }
 
+.nav-links li a.active {
+    color: var(--font-color-secondary);
+
+}
+
 /* End of Navbar */
 
 /* Start of Header */
 .header {
-    /* background-color: #EEEEEE; */
     background-color: var(--bg-secondary);
     display: flex;
     align-items: center;
@@ -254,7 +317,6 @@ nav .nav-links ul li a.active::before {
 }
 
 .header h2 {
-    /* color: #37373F; */
     color: var(--font-color-secondary);
     font-size: 50px;
     font-weight: 600;
@@ -262,7 +324,6 @@ nav .nav-links ul li a.active::before {
 }
 
 .header p {
-    /* color: #4F4F5A; */
     color: var(--bg-4);
     font-size: 16px;
     line-height: 25.6px;
@@ -281,8 +342,7 @@ nav .nav-links ul li a.active::before {
 
 a.header-button {
     padding: 8px 18px;
-    color: var(--bg-3);
-    /* background-color: #E61414; */
+    color: var(--bg-primary);
     background-color: var(--color-primary);
     border-radius: 30px;
     transition: all 1s;
@@ -317,7 +377,7 @@ a.header-play-button {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: var(--bg-5);
+    background-color: var(--bg-primary);
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
@@ -339,7 +399,6 @@ a.header-play-button:hover {
 }
 
 .inner-chefs {
-    /* background-color: burlywood; */
     border-radius: 8px;
 }
 
@@ -377,7 +436,6 @@ a.header-play-button:hover {
     flex: 1 0 25%;
     position: relative;
     transition: transform 1s;
-    /* margin: 30px; */
 }
 
 .chef-social {
@@ -386,9 +444,9 @@ a.header-play-button:hover {
     width: fit-content;
     position: absolute;
     top: 40px;
-    right: -50px;
+    right: -10px;
     border-radius: 5px;
-    padding: 20px;
+    padding: 15px;
     transition: all 1s ease-in-out;
     opacity: 0;
     overflow-x: hidden !important;
@@ -402,7 +460,7 @@ a.header-play-button:hover {
 
 .chef:hover .chef-social {
     opacity: 0.7;
-    right: 20px;
+    right: 15px;
 }
 
 .chef:hover {
@@ -428,7 +486,7 @@ a.header-play-button:hover {
 }
 
 .gallery {
-    border: var(--font-color-secondary) 2px solid;
+    border: var(--bg-primary) 2px solid;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -470,7 +528,7 @@ a.header-play-button:hover {
 }
 
 .gallery-img-layer {
-    color: var(--font-color-secondary);
+    color: var(--bg-primary-light);
     background: rgba(0, 0, 0, 0.7);
     position: absolute;
     top: 100%;
@@ -491,7 +549,7 @@ a.header-play-button:hover {
 }
 
 .gallery-layer-content>h2 {
-    color: var(--font-color-secondary);
+    color: var(--bg-primary-light);
     text-transform: capitalize;
     font-size: 24px;
     font-weight: 700;
@@ -544,6 +602,7 @@ li.contact {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: var(--bg-primary);
 }
 
 .contact-content {
@@ -563,13 +622,14 @@ li.contact {
 #Contact form {
     padding: 20px;
     background-color: var(--bg-primary);
+    box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 15px 0px;
 }
 
 input {
     width: 100%;
     height: 40px;
     border-radius: 0;
-    border: none;
+    border: 2px var(--bg-secondary) solid;
     padding-left: 10px;
     margin: 10px 0;
 }
@@ -587,7 +647,7 @@ input {
 textarea {
     width: 100%;
     border-radius: 0;
-    border: none;
+    border: 2px var(--bg-secondary) solid;
     padding: 10px 0 0 10px;
     resize: both;
     overflow: auto;
@@ -612,7 +672,7 @@ button {
 /* Start Footer */
 footer {
     background: linear-gradient(rgba(0, 0, 0, 0.7) 0% 100%), url('./../images/textured-metal-background.jpg');
-    color: var(--font-color-secondary);
+    color: var(--bg-primary-light);
 }
 
 footer h3 {
@@ -641,7 +701,7 @@ footer h3 {
 }
 
 .footer-social h2 {
-    color: var(--font-color-secondary);
+    color: var(--bg-primary-light);
     font-size: 30px;
     font-weight: 700;
     text-transform: capitalize;
@@ -651,8 +711,7 @@ footer h3 {
     font-size: 30px;
     font-weight: 700;
     content: ".";
-    /* color: #CE1212; */
-    color: var(--color-primary);
+    color: var(--bg-primary-light);
 }
 
 .footer-social p {
@@ -662,6 +721,7 @@ footer h3 {
 }
 
 .footer-social h3 {
+    color: var(--bg-primary-light);
     margin: 10px 0px 20px;
     padding: 10px 0;
     border-bottom: var(--font-color) 1px solid;
@@ -675,7 +735,7 @@ footer h3 {
 
 .footer-social ul li i {
     flex: 1 0 10%;
-    color: var(--font-color-secondary);
+    color: var(--bg-primary-light);
 }
 
 .footer-subscribe {
@@ -711,8 +771,13 @@ footer h3 {
     justify-content: space-evenly;
 }
 
+.footer h3 {
+    color: var(--bg-primary-light);
+    ;
+}
+
 .footer-subscribe a {
-    color: var(--font-color-secondary);
+    color: var(--bg-primary-light);
     text-transform: capitalize;
 }
 
@@ -726,11 +791,11 @@ footer h3 {
 
 .footer-subscribe ul li:hover {
     transform: translateX(10px);
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-4-light);
 }
 
 .footer-subscribe ul li i {
-    color: var(--font-color-secondary);
+    color: var(--bg-primary-light);
 }
 
 .footer-get-in-touch {
@@ -738,7 +803,7 @@ footer h3 {
 }
 
 .footer-get-in-touch i {
-    color: var(--color-secondary);
+    color: var(--bg-primary-light);
     padding: 8px;
 }
 
