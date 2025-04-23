@@ -51,6 +51,11 @@ body {
     overflow-y: var(--bg-primary);
 }
 
+html,
+body {
+    scroll-behavior: smooth;
+}
+
 .container {
     padding: 40px 15px;
     width: 85%;
@@ -318,14 +323,14 @@ nav .nav-links ul li a.active::before {
 
 .header h2 {
     color: var(--font-color-secondary);
-    font-size: 50px;
+    font-size: 4rem;
     font-weight: 600;
     font-family: "Amatic SC", sans-serif;
 }
 
 .header p {
     color: var(--bg-4);
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 25.6px;
     font-weight: var(--font-weight);
     margin: 20px 0;
